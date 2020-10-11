@@ -1,0 +1,50 @@
+{
+  "attributeMappings": [
+    {
+      "directMappings": [
+        {
+          "attributeName": "personName",
+          "attributeType": "java.lang.String",
+          "sourceAttribute": "employees.employee.firstname",
+          "sourceAttributeType": "java.lang.String",
+          "populationLogic": "concat(employees.employee.firstname,employees.employee.lastname)"
+        },
+        {
+          "attributeName": "profession",
+          "attributeType": "java.lang.String",
+          "sourceAttribute": "employees.employee.title",
+          "sourceAttributeType": "java.lang.String",
+          "populationLogic": null
+        }
+      ],
+      "arrayMappings": [
+        {
+          "attributeName": "locations",
+          "attributeType": "java.util.List<com.amsidh.mvc.domain.Location>",
+          "attributes": [
+            {
+              "attributeName": "state",
+              "attributeType": "java.lang.String",
+              "sourceAttribute": "employees.employee.addresses.address.state",
+              "sourceAttributeType": "java.lang.String",
+              "populationLogic": null
+            },
+            {
+              "attributeName": "phoneNumbers",
+              "attributeType": "java.util.List<com.amsidh.mvc.domain.Mobile>",
+              "attributes": [
+                {
+                  "attributeName": "mobileNumber",
+                  "attributeType": "java.lang.String",
+                  "sourceAttribute": "employees.employee.addresses.address.telephones.telephone",
+                  "sourceAttributeType": "java.lang.String",
+                  "populationLogic": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

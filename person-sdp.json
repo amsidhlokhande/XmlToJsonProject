@@ -1,0 +1,66 @@
+{
+  "attributeMappings": [
+    {
+      "directMappings": [
+        {
+          "attributeName": "Person.personName",
+          "attributeType": "java.lang.String",
+          "attributeClass": "java.lang.String",
+          "sourceAttribute": "employees.employee.firstname",
+          "sourceAttributeType": "java.lang.String",
+          "populationLogic": "concat(employees.employee.firstname,employees.employee.lastname)",
+          "attributes": []
+        },
+        {
+          "attributeName": "Person.profession",
+          "attributeType": "java.lang.String",
+          "attributeClass": "java.lang.String",
+          "sourceAttribute": "employees.employee.title",
+          "sourceAttributeType": "java.lang.String",
+          "populationLogic": null,
+          "attributes": []
+        }
+      ],
+      "arrayMappings": [
+        {
+          "attributeName": "Person.locations",
+          "attributeType": "java.util.List",
+          "attributeClass": "com.amsidh.mvc.domain.Location",
+          "sourceAttribute": null,
+          "sourceAttributeType": null,
+          "populationLogic": null,
+          "attributes": [
+            {
+              "attributeName": "Person.locations.Location.state",
+              "attributeType": "java.lang.String",
+              "attributeClass": "java.lang.String",
+              "sourceAttribute": "employees.employee.addresses.address.state",
+              "sourceAttributeType": "java.lang.String",
+              "populationLogic": null,
+              "attributes": []
+            },
+            {
+              "attributeName": "Person.locations.Location.phoneNumbers",
+              "attributeType": "java.util.List",
+              "attributeClass": "com.amsidh.mvc.domain.Mobile",
+              "sourceAttribute": null,
+              "sourceAttributeType": null,
+              "populationLogic": null,
+              "attributes": [
+                {
+                  "attributeName": "Person.locations.Location.phoneNumbers.mobileNumber",
+                  "attributeType": "java.lang.Long",
+                  "attributeClass": "java.lang.Long",
+                  "sourceAttribute": "employees.employee.addresses.address.telephones.telephone",
+                  "sourceAttributeType": "java.lang.Long",
+                  "populationLogic": null,
+                  "attributes": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
